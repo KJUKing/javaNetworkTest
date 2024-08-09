@@ -1,10 +1,10 @@
-package tcp;
+package kr.or.ddit.basic.tcp;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class TcpServer01 {
+public class TcpServer03 {
     public static void main(String[] args) throws IOException {
         //TCP소켓 통신을 위해 Port번호를 지정하여 ServerSocket객체를 생성한다
         ServerSocket server = new ServerSocket(7777);
@@ -35,18 +35,11 @@ public class TcpServer01 {
         // 클라이언트가 보낸 메세지 받기
         //      -> Socket객체의 InputStream객체를 이용한다.
         //      -> Socket의 getInputStream() 메소드를 이용하여 InputStream객체를 구할수도있다
-        InputStream in = socket.getInputStream();
-        DataInputStream din = new DataInputStream(in);
 
-        // 클라이언트가 보낸 메세지를 받아서 화면에 출력
-        String str = din.readUTF();
-        System.out.println("클라이언트가 보낸 메세지 : " + str);
         System.out.println();
         System.out.println("--------------------------------");
 
-        // 클라이언트가 보낸 메세지를 그대로 클라이언트에게 다시 보낸다
-        //      -> Socket객체의 OutputStream객체를 이요한다.
-        //      -> Socket객체의 getOutPutStream()메소드를 이용하여 OutputStream객체 구하기
+        String str ="파일 받았습니다";
         OutputStream out = socket.getOutputStream();
         DataOutputStream dout = new DataOutputStream(out);
 
@@ -60,7 +53,6 @@ public class TcpServer01 {
 
         //사용했던 스트림 소켓닫기
         dout.close();
-        din.close();
         socket.close();
         server.close();
     }

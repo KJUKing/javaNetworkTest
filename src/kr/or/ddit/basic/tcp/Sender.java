@@ -1,4 +1,4 @@
-package tcp;
+package kr.or.ddit.basic.tcp;
 
 import java.io.DataOutputStream;
 import java.io.IOException;

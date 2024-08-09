@@ -1,4 +1,4 @@
-package tcp;
+package kr.or.ddit.basic.tcp;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;

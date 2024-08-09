@@ -1,4 +1,4 @@
-package tcp;
+package kr.or.ddit.basic.tcp;
 
 import java.io.IOException;
 import java.net.ServerSocket;
